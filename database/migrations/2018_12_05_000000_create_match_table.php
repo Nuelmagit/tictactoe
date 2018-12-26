@@ -23,6 +23,8 @@ class CreateMatchTable extends Migration {
             $table->integer('next');
             $table->integer('winner');
             $table->text('board');
+            $table->text('wins');
+            $table->integer('type');
         });
     }
 

@@ -15,10 +15,6 @@ namespace App\TicTacToe\MatchAnalizer;
  */
 class BasicMatchAnalizer implements MatchAnalizerInterface {
 
-    CONST PLAYER_X = 1;
-    CONST PLAYER_O = 2;
-    CONST EMPTY_PLACE = 0;
-
     public function getMatchWinner($board) {
         if (!$this->hasMinimalMovements($board)) {
             return self::EMPTY_PLACE;
@@ -88,11 +84,10 @@ class BasicMatchAnalizer implements MatchAnalizerInterface {
     }
 
     private function getWinnerInLine($board_line) {
-        $players_in_game = [self::PLAYER_X, self::PLAYER_O];
         $pieces_in_line = array_count_values($board_line);
         $winner_in_line = array_search(3, $pieces_in_line);
 
-        if (in_array($winner_in_line, $players_in_game)) {
+        if (in_array($winner_in_line, MatchAnalizerInterface::PLAYERS_IN_GAME)) {
             return $winner_in_line;
         }
 

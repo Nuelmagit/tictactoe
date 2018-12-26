@@ -17,9 +17,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Match extends Model {
 
+    CONST CLASIC = 1;
+    CONST BEST_OF_THREE = 2;
+
     public $timestamps = false;
     protected $table = 'match';
-    protected $casts = ['board' => 'array'];
+    protected $casts = ['board' => 'array', 'wins' => 'array'];
     protected $appends = ['name'];
 
     function getNameAttribute() {

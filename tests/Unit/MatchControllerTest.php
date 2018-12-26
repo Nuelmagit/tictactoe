@@ -28,7 +28,6 @@ class MatchControllerTest extends TestCase {
         $math = last($response->getData());
         $response_move = $this->json('PUT', "/api/match/{$math->id}", ['position' => 5]);
         $match_moved = $response_move->getData();
-
         $this->assertEquals($math->id, $match_moved->id);
         $response_move->assertStatus(200);
     }

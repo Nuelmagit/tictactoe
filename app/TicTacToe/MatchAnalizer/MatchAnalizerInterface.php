@@ -14,6 +14,12 @@ namespace App\TicTacToe\MatchAnalizer;
  */
 interface MatchAnalizerInterface {
 
+    CONST PLAYER_X = 1;
+    CONST PLAYER_O = 2;
+    CONST EMPTY_PLACE = 0;
+    CONST WINS = [self::PLAYER_X => 0, self::PLAYER_O => 0];
+    CONST PLAYERS_IN_GAME = [self::PLAYER_X, self::PLAYER_O];
+
     public function getMatchWinner($board);
 
     public function getNext($current);
